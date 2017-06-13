@@ -1,1 +1,3 @@
+TUNING.DISTPENALTY_MAXTIME = GetModConfigData("maxdays")
+
 GLOBAL.STRINGS.NAMES.DISTPENALTY = "Escape Penaty"

@@ -9,7 +9,7 @@ local Distpenalty = Class(function(self, inst)
     self.mp = c_find("multiplayer_portal")
     self.maxdist = TheWorld.Map:GetSize() * 4
     self.mindist = 0
-    self.maxdays = 3
+    self.maxdays = TUNING.DISTPENALTY_MAXTIME
     self.mindays = 0
 
     local period = 10
@@ -18,6 +18,10 @@ end,
 nil,
 {
 })
+
+function Distpenalty:GetMaxDays()
+    return self.maxdays
+end
 
 function Distpenalty:GetPenaltydist()
     local day = TheWorld.state.cycles
