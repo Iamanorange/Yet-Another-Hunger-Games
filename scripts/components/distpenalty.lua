@@ -9,8 +9,9 @@ local Distpenalty = Class(function(self, inst)
     self.mp = c_find("multiplayer_portal")
     self.maxdist = TheWorld.Map:GetSize() * 4
     self.mindist = 0
-    self.maxdays = TUNING.DISTPENALTY_MAXTIME
-    self.mindays = 0
+    self.maxdays = TUNING.DISTPENALTY_MAXDAYS
+    self.mindays = TUNING.DISTPENALTY_MINDAYS
+    self.penaltymultiplier = TUNING.DISTPENALTY_MULTIPLIER
 
     local period = 10
     self.inst:DoPeriodicTask(period, OnTaskTick, nil, self, period)
@@ -44,7 +45,7 @@ function Distpenalty:DoDec(dt)
     local penaltydist = Lerp(self.maxdist, self.mindist, day/self.maxdays)
     if not self.inst:IsNear(self.mp, penaltydist) then
         self.inst.components.talker:Say("Too far from Portal!")
-        self.inst.components.health:DoDelta(-dt, true, "distpenalty")
+        self.inst.components.health:DoDelta(-dt * self.penaltymultiplier, true, "distpenalty")
     end
 end
 

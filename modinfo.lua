@@ -24,4 +24,16 @@ configuration_options =
         },
         default = 5,
     },
+    {
+        name = "penaltymultiplier",
+        label = "Penalty Multiplier",
+        options = {
+            {description = "0.5", data = 0.5},
+            {description = "1", data = 1},
+            {description = "2", data = 2},
+            {description = "4", data = 4},
+            {description = "8", data = 8},
+        },
+        default = 1,
+    },
 }
