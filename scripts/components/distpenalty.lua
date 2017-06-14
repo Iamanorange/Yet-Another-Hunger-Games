@@ -13,7 +13,7 @@ local Distpenalty = Class(function(self, inst)
     self.mindays = TUNING.DISTPENALTY_MINDAYS
     self.penaltymultiplier = TUNING.DISTPENALTY_MULTIPLIER
 
-    local period = 10
+    local period = 2
     self.inst:DoPeriodicTask(period, OnTaskTick, nil, self, period)
 end,
 nil,

@@ -36,4 +36,13 @@ configuration_options =
         },
         default = 1,
     },
+    {
+        name = "rebalance",
+        label = "Rebalance Characters",
+        options = {
+            {description = "No", data = false},
+            {description = "Yes", data = true},
+        },
+        default = false,
+    },
 }
