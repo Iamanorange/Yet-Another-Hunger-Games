@@ -17,7 +17,6 @@ local start_inv = {}
 if TUNING.DISTPENALTY_REBALANCE then
     start_inv =
     {
-        "wathgrithrhat",
         "meat",
         "meat",
         "meat",
