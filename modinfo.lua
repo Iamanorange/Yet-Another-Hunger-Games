@@ -39,8 +39,8 @@ configuration_options =
         name = "rebalance",
         label = "Rebalance Characters",
         options = {
-            {description = "No", data = false},
-            {description = "Yes", data = true},
+            {description = "Off", data = false},
+            {description = "On", data = true},
         },
         default = false,
     },

@@ -130,13 +130,9 @@ local function master_init(inst)
     inst.components.health:SetMaxHealth(TUNING.WATHGRITHR_HEALTH)
     inst.components.hunger:SetMax(TUNING.WATHGRITHR_HUNGER)
     inst.components.sanity:SetMax(TUNING.WATHGRITHR_SANITY)
-    if TUNING.DISTPENALTY_REBALANCE then
-        inst.components.combat.damagemultiplier = TUNING.WATHGRITHR_DAMAGE_MULT_REBALANCED
-        inst.components.health:SetAbsorptionAmount(TUNING.WATHGRITHR_ABSORPTION_REBALANCED)
-    else
-        inst.components.combat.damagemultiplier = TUNING.WATHGRITHR_DAMAGE_MULT
-        inst.components.health:SetAbsorptionAmount(TUNING.WATHGRITHR_ABSORPTION)
-    end
+
+    inst.components.combat.damagemultiplier = TUNING.WATHGRITHR_DAMAGE_MULT
+    inst.components.health:SetAbsorptionAmount(TUNING.WATHGRITHR_ABSORPTION)
 
     inst:ListenForEvent("killed", onkilled)
     inst:ListenForEvent("onattackother", onattack)
