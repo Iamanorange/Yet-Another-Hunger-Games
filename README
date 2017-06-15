@@ -6,11 +6,14 @@ YAHG is a server only mod for PVP players.
 
 Features:
 ` Penalize player who is too far from portal. The safe distance reduce over time.
+` Haunting can't trigger anything
 
 Configuration Options:
 ` Maximum Days
 ` Penalty Multiplier
 ` Rebalance Characters
+    Wolfgang:
+        Lower damage multiplier [0.5~2.0] --> [0.0~1.75]
     Wigfrid: 
         Remove Battle Spear and Battle Helm from starting items, 
         Lower damage multiplier 1.25 --> 1.15, 
