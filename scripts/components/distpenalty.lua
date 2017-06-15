@@ -46,7 +46,7 @@ function Distpenalty:DoDec(dt)
         if dist > 35 then
             self.inst.components.talker:Say("Too far from Portal!")
         end
-        self.inst.components.health:DoDelta(-dt * (dist/self.maxdist) * math.max((TheWorld.state.cycles + TheWorld.state.time)/self.maxdays, 1) * self.penaltymultiplier, true, "distpenalty")
+        self.inst.components.health:DoDelta(-dt * (TheWorld.state.cycles + TheWorld.state.time)/self.maxdays * self.penaltymultiplier, true, "distpenalty")
     end
 end
 
