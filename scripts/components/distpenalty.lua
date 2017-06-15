@@ -32,12 +32,12 @@ function Distpenalty:GetPenaltydist()
 end
 
 function Distpenalty:LongUpdate(dt)
-    self:DoDec(dt, true)
+    self:DoDec(dt)
 end
 
 function Distpenalty:DoDec(dt)
     if (self.inst.player_classified ~= nil and self.inst.player_classified.isghostmode:value()) or 
-        (self.inst.player_classified == nil and self.inst:HasTag("playerghost")) then
+       (self.inst.player_classified == nil and self.inst:HasTag("playerghost")) then
         return
     end
     local penaltydist = self:GetPenaltydist()
