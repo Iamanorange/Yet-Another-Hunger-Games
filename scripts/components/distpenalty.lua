@@ -36,6 +36,10 @@ function Distpenalty:LongUpdate(dt)
 end
 
 function Distpenalty:DoDec(dt)
+    if (self.inst.player_classified ~= nil and self.inst.player_classified.isghostmode:value()) or 
+        (self.inst.player_classified == nil and self.inst:HasTag("playerghost")) then
+        return
+    end
     local penaltydist = self:GetPenaltydist()
     local dist = math.sqrt(self.inst:GetDistanceSqToInst(self.mp))
     if dist > penaltydist then
