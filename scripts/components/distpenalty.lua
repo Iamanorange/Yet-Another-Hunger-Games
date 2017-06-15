@@ -32,12 +32,12 @@ function Distpenalty:GetPenaltydist()
 end
 
 function Distpenalty:LongUpdate(dt)
-    self:DoDec(dt, true)
+    self:DoDec(dt)
 end
 
 function Distpenalty:DoDec(dt)
     if (self.inst.player_classified ~= nil and self.inst.player_classified.isghostmode:value()) or 
-        (self.inst.player_classified == nil and self.inst:HasTag("playerghost")) then
+       (self.inst.player_classified == nil and self.inst:HasTag("playerghost")) then
         return
     end
     local penaltydist = self:GetPenaltydist()
@@ -46,7 +46,7 @@ function Distpenalty:DoDec(dt)
         if dist > 35 then
             self.inst.components.talker:Say("Too far from Portal!")
         end
-        self.inst.components.health:DoDelta(-dt * (dist/self.maxdist) * math.max((TheWorld.state.cycles + TheWorld.state.time)/self.maxdays, 1) * self.penaltymultiplier, true, "distpenalty")
+        self.inst.components.health:DoDelta(-dt * (TheWorld.state.cycles + TheWorld.state.time)/self.maxdays, 1 * self.penaltymultiplier, true, "distpenalty")
     end
 end
 

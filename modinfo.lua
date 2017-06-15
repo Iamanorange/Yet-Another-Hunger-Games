@@ -17,23 +17,24 @@ configuration_options =
         name = "maxdays",
         label = "Maximum Days",
         options = {
-            {description = "5 Days", data = 5},
+            {description = "4 Days", data = 4},
             {description = "8 Days", data = 8},
             {description = "16 Days", data = 16},
             {description = "32 Days", data = 32},
         },
-        default = 5,
+        default = 4,
     },
     {
         name = "penaltymultiplier",
         label = "Penalty Multiplier",
         options = {
+            {description = "2", data = 2},
             {description = "4", data = 4},
             {description = "8", data = 8},
             {description = "16", data = 16},
             {description = "32", data = 32},
         },
-        default = 8,
+        default = 4,
     },
     {
         name = "rebalance",
