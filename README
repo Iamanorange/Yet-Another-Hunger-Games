@@ -12,12 +12,28 @@ Configuration Options:
 ` Maximum Days
 ` Penalty Multiplier
 ` Rebalance Characters
+    Wilson:
+        Beards provide freezing resistance.
+    Willow:
+        Immune to fire,
+        Remove Bernie from starting items.
     Wolfgang:
-        Lower damage multiplier [0.5~2.0] --> [0.0~1.75]
+        Lower damage multiplier [0.5~2.0] --> [0.0~1.75].
+    Wendy:
+    WX78:
+    Wickerbottom:
+    Woodie:
+        Remove sanity penalty for Werebeaver,
+        Higher damage for Werebeaver 17 --> 51,
+        Beards provide freezing resistance.
+    Wes:
+    Waxwell:
     Wigfrid: 
         Remove Battle Spear and Battle Helm from starting items, 
         Lower damage multiplier 1.25 --> 1.15, 
         Lower Absorption 0.25 --> 0.15.
+    Webber:
+        Beards provide freezing resistance.
 
 To do list:
 ` Rebanlance characters
