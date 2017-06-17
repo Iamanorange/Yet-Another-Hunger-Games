@@ -8,9 +8,9 @@ local Distpenalty = Class(function(self, inst)
     self.mp = c_find("multiplayer_portal")
     self.maxdist = TheWorld.Map:GetSize() * 4
     self.mindist = 2
-    self.maxdays = TUNING.DISTPENALTY_MAXDAYS
-    self.mindays = TUNING.DISTPENALTY_MINDAYS
-    self.penaltymultiplier = TUNING.DISTPENALTY_MULTIPLIER
+    self.maxdays = _G.YAHG.DISTPENALTY_MAXDAYS
+    self.mindays = _G.YAHG.DISTPENALTY_MINDAYS
+    self.penaltymultiplier = _G.YAHG.DISTPENALTY_MULTIPLIER
 
     local period = 2
     self.inst:DoPeriodicTask(period, OnTaskTick, nil, self, period)

@@ -2,7 +2,7 @@ name = "Yet Another Hunger Games"
 description = "Yet Another Hunger Games"
 
 author = "__orange"
-version = "0"
+version = "20170617.15"
 forumthread = ""
 api_version = 10
 

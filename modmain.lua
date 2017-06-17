@@ -1,11 +1,17 @@
+local _G = GLOBAL
 
+local TheNet = _G.TheNet
+local STRINGS = _G.STRINGS
+local AllPlayers = _G.AllPlayers
 
-TUNING.DISTPENALTY_MAXDAYS = GetModConfigData("maxdays")
-TUNING.DISTPENALTY_MINDAYS = 0
-TUNING.DISTPENALTY_MULTIPLIER = GetModConfigData("penaltymultiplier")
-TUNING.DISTPENALTY_REBALANCE = GetModConfigData("rebalance")
+_G.YAHG = {
+    DISTPENALTY_MAXDAYS = GetModConfigData("maxdays"),
+    DISTPENALTY_MINDAYS = 0,
+    DISTPENALTY_MULTIPLIER = GetModConfigData("penaltymultiplier"),
+    DISTPENALTY_REBALANCE = GetModConfigData("rebalance"),
+}
 
-if TUNING.DISTPENALTY_REBALANCE then
+if _G.YAHG.DISTPENALTY_REBALANCE then
 
     -- Wilson
     
@@ -41,4 +47,18 @@ if TUNING.DISTPENALTY_REBALANCE then
 
 end
 
-GLOBAL.STRINGS.NAMES.DISTPENALTY = "Escape Penalty"
+STRINGS.NAMES.DISTPENALTY = "Escape Penalty"
+
+local function Broadcast()
+    if #AllPlayers == 0 then
+        return 
+    end
+	local broadcast = string.format("Safe distance: %d", GLOBAL.AllPlayers[1].components.distpenalty:GetPenaltydist())
+	TheNet:Announce(broadcast)
+end
+
+AddComponentPostInit("playerspawner", function(OnAnnounce, inst)
+	if _G.TheWorld.ismastershard then
+		_G.scheduler:ExecutePeriodic(10, Broadcast)
+	end
+end)
