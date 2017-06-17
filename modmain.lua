@@ -12,6 +12,8 @@ _G.YAHG = {
 }
 
 if _G.YAHG.DISTPENALTY_REBALANCE then
+    -- Global
+    TUNING.PVP_DAMAGE_MOD = 1
 
     -- Wilson
     

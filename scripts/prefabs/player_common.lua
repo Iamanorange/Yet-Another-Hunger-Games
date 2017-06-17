@@ -711,6 +711,11 @@ local function RemoveDeadPlayer(inst, spawnskeleton)
             -- Set the description
             skel:SetSkeletonDescription(inst.prefab, inst:GetDisplayName(), inst.deathcause, inst.deathpkname)
             skel:SetSkeletonAvatarData(inst.deathclientobj)
+            inst.components.inventory:TransferInventory(skel)
+            -- print("[player_common_1][NumItems] "..tostring(inst.components.inventory:NumItems()))
+            skel.components.workable:SetWorkLeft(inst.components.inventory:NumItems())
+            -- print("[player_common_1][SetWorkLeft] "..tostring(skel.components.inventory:NumItems()))
+            -- print(skel.components.workable:GetDebugString())
         end
 
         -- Death FX
@@ -1016,6 +1021,11 @@ local function OnMakePlayerGhost(inst, data)
             -- Set the description
             skel:SetSkeletonDescription(inst.prefab, inst:GetDisplayName(), inst.deathcause, inst.deathpkname)
             skel:SetSkeletonAvatarData(inst.deathclientobj)
+            inst.components.inventory:TransferInventory(skel)
+            -- print("[player_common_2][NumItems] "..tostring(inst.components.inventory:NumItems()))
+            skel.components.workable:SetWorkLeft(skel.components.inventory:NumItems())
+            -- print("[player_common_2][SetWorkLeft] "..tostring(skel.components.inventory:NumItems()))
+            -- print(skel.components.workable:GetDebugString())
         end
     end
 
