@@ -14,7 +14,7 @@ local prefabs =
 }
 
 local start_inv = {}
-if TUNING.DISTPENALTY_REBALANCE then
+if _G.YAHG.DISTPENALTY_REBALANCE then
     start_inv =
     {
         "meat",
