@@ -44,7 +44,7 @@ local book_defs =
 {
     {
         name = "book_tentacles",
-        uses = _G.YAHG.DISTPENALTY_REBALANCE and 1 or 5,
+        uses = _G.YAHG.DISTPENALTY_REBALANCE and 2 or 5,
         fn = function(inst, reader)
             local pt = reader:GetPosition()
             local numtentacles = 3
@@ -126,7 +126,7 @@ local book_defs =
 
     {
         name = "book_brimstone",
-        uses = _G.YAHG.DISTPENALTY_REBALANCE and 1 or 5,
+        uses = _G.YAHG.DISTPENALTY_REBALANCE and 2 or 5,
         fn = function(inst, reader)
             local pt = reader:GetPosition()
             local num_lightnings = 16
@@ -148,7 +148,7 @@ local book_defs =
 
     {
         name = "book_sleep",
-        uses = _G.YAHG.DISTPENALTY_REBALANCE and 1 or 5,
+        uses = _G.YAHG.DISTPENALTY_REBALANCE and 2 or 5,
         fn = function(inst, reader)
             reader.components.sanity:DoDelta(-TUNING.SANITY_LARGE)
 
@@ -180,7 +180,7 @@ local book_defs =
 
     {
         name = "book_gardening",
-        uses = _G.YAHG.DISTPENALTY_REBALANCE and 1 or 5,
+        uses = _G.YAHG.DISTPENALTY_REBALANCE and 2 or 5,
         fn = function(inst, reader)
             reader.components.sanity:DoDelta(-TUNING.SANITY_LARGE)
 
